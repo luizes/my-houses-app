@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { ModalController } from 'ionic-angular';
 
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
-    private _housesCollection: AngularFirestoreCollection<any>;
-    public houses: Observable<any[]>;
-
-    constructor(private _firestore: AngularFirestore) {
-        this._housesCollection = _firestore.collection('houses');
-        this.houses = this._housesCollection.valueChanges();
-    }
+    constructor(private _modalCtrl: ModalController) { }
 
     public add(): void {
-        this._housesCollection.add({ describe: 'testestests' });
+        this._modalCtrl.create(Component).present();
     }
 }
