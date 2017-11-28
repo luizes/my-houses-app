@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 
 import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
+import { NewHousePage } from '../pages/new-house/new-house';
 
 import { HousesListComponent } from '../components/houses-list/houses-list';
 
@@ -22,6 +23,7 @@ import { HouseService } from '../services/house-service';
     MyApp,
     WelcomePage,
     HomePage,
+    NewHousePage,
     HousesListComponent
   ],
   imports: [
@@ -35,6 +37,7 @@ import { HouseService } from '../services/house-service';
     MyApp,
     WelcomePage,
     HomePage,
+    NewHousePage,
     HousesListComponent
   ],
   providers: [
