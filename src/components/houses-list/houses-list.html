@@ -9,7 +9,7 @@
         </p>
     </ion-card-content>
     <ion-item>
-        <button item-start ion-button clear icon-start color="danger">
+        <button item-start ion-button clear icon-start (click)="delete(house)" color="danger">
             <ion-icon name='trash'></ion-icon>Excluir
         </button>
         <button item-end ion-button clear icon-start (click)="edit(house)">

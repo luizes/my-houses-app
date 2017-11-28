@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HouseService } from '../../services/house-service';
 import { Observable } from 'rxjs/Observable';
 import { House } from '../../entities/house';
-import { ModalController } from 'ionic-angular';
+import { ModalController, AlertController } from 'ionic-angular';
 import { UpdateHousePage } from '../../pages/update-house/update-house';
 
 @Component({
@@ -13,10 +13,26 @@ export class HousesListComponent {
     public houses: Observable<House[]>;
 
     constructor(
-        houseService: HouseService,
-        private _modalCtrl: ModalController
+        private _houseService: HouseService,
+        private _modalCtrl: ModalController,
+        private _alertCtrl: AlertController
     ) {
-        this.houses = houseService.getHouses();
+        this.houses = _houseService.getHouses();
+    }
+
+    public delete(house: House): void {
+        this._alertCtrl.create({
+            title: 'Certeza que vai excluir essa casa?',
+            subTitle: `${house.description}`,
+            buttons: [{
+                text: 'Cancelar'
+            }, {
+                text: 'Sim, certeza!',
+                handler: () => {
+                    this._houseService.deleteHouse(house);
+                }
+            }]
+        }).present();
     }
 
     public edit(house: House): void {

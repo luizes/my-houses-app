@@ -20,4 +20,12 @@ export class HouseService {
     public getHouses(): Observable<House[]> {
         return this._housesCollection.valueChanges();
     }
+
+    public updateHouse(house: House): Promise<any> {
+        return this._housesCollection.doc(house.$key).update(house);
+    }
+
+    public deleteHouse(house: House): Promise<any> {
+        return this._housesCollection.doc(house.$key).delete();
+    }
 }

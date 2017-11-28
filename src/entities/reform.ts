@@ -1,4 +1,4 @@
 export class Reform {
-    description: string;
-    spent: number;
+    public description: string;
+    public spent: number;
 }
