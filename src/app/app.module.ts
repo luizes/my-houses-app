@@ -13,38 +13,44 @@ import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 import { NewHousePage } from '../pages/new-house/new-house';
+import { UpdateHousePage } from '../pages/update-house/update-house';
 
 import { HousesListComponent } from '../components/houses-list/houses-list';
+import { HouseFormularyComponent } from '../components/house-fomulary/house-formulary';
 
 import { HouseService } from '../services/house-service';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    WelcomePage,
-    HomePage,
-    NewHousePage,
-    HousesListComponent
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(FirebaseConfig),
-    AngularFirestoreModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    WelcomePage,
-    HomePage,
-    NewHousePage,
-    HousesListComponent
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    HouseService,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
-  ]
+    declarations: [
+        MyApp,
+        WelcomePage,
+        HomePage,
+        NewHousePage,
+        UpdateHousePage,
+        HousesListComponent,
+        HouseFormularyComponent
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp),
+        AngularFireModule.initializeApp(FirebaseConfig),
+        AngularFirestoreModule
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        WelcomePage,
+        HomePage,
+        NewHousePage,
+        UpdateHousePage,
+        HousesListComponent,
+        HouseFormularyComponent
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        HouseService,
+        { provide: ErrorHandler, useClass: IonicErrorHandler }
+    ]
 })
 export class AppModule { }
