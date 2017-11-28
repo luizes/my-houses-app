@@ -13,7 +13,7 @@ import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 
-
+import { HousesListComponent } from '../components/houses-list/houses-list';
 
 import { HouseService } from '../services/house-service';
 
@@ -21,7 +21,8 @@ import { HouseService } from '../services/house-service';
   declarations: [
     MyApp,
     WelcomePage,
-    HomePage
+    HomePage,
+    HousesListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { HouseService } from '../services/house-service';
   entryComponents: [
     MyApp,
     WelcomePage,
-    HomePage
+    HomePage,
+    HousesListComponent
   ],
   providers: [
     StatusBar,
