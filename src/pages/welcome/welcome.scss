@@ -1,12 +1,12 @@
 page-welcome {
     .splash-bg {
         position: relative;
-        background: url('./../assets/img/splashbg.png') no-repeat transparent;
+        background: url('./../assets/img/splashbg.svg') no-repeat transparent;
         background-size: cover;
-        height: 45%;
+        height: 100%;
         z-index: 1;
         background-repeat: repeat-x;
-        animation: animatedBackground 1.5s linear infinite alternate-reverse;
+        animation: animatedBackground 10s linear infinite alternate-reverse;
     }
 
     @keyframes animatedBackground {
@@ -17,22 +17,22 @@ page-welcome {
     .splash-info {
         position: relative;
         z-index: 2;
-        margin-top: -142px;
+        margin-top: -485px;
         text-align: center;
     }
 
     .splash-logo {
         margin: auto;
-        background: url('./../assets/img/appicon.png') no-repeat transparent;
+        background: url('./../assets/img/appicon.svg') no-repeat transparent;
         background-size: 100%;
         width: 256px;
-        height: 200px;
+        height: 256px;
     }
 
     .splash-intro {
         font-size: 18px;
         font-weight: bold;
-        max-width: 80%;
+        max-width: 90%;
         margin: auto;
         p {
             font-weight: lighter;

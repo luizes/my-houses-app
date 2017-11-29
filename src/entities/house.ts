@@ -3,6 +3,14 @@ import { Reform } from "./reform";
 export class House {
     public $key: string;
     public description: string;
+
+    public address: string;
+    public number: number;
+    public neighborhood: string;
+    public city: string;
+    public state: string;
+    public nation: string;
+
     public images: string[] = [];
     public reforms: Reform[] = [];
 
