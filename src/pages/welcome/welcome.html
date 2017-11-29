@@ -1,13 +1,19 @@
 <ion-content scroll="false">
-    <div class="splash-bg"></div>
-    <div class="splash-info">
-        <div class="splash-logo"></div>
-        <div class="splash-intro">
-            Bem vindo!
-            <p>Gerêncie suas casas na palma da mão.</p>
+    <div class="splash-bg">
+        <div class="splash-info">
+            <br>
+            <br>
+            <br>
+            <div class="splash-intro">
+                <h1>Bem vindo!</h1>
+                <h4>Gerêncie suas casas na palma da mão.</h4>
+            </div>
+            <div class="splash-logo"></div>
         </div>
-        <div padding>
-            <button ion-button block [navPush]="homePage">Minhas Casas</button>
-        </div>
+        <ion-footer>
+            <div padding>
+                <button ion-button block [navPush]="homePage">Minhas Casas</button>
+            </div>
+        </ion-footer>
     </div>
 </ion-content>

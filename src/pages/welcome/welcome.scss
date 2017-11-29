@@ -6,7 +6,7 @@ page-welcome {
         height: 100%;
         z-index: 1;
         background-repeat: repeat-x;
-        animation: animatedBackground 10s linear infinite alternate-reverse;
+        animation: animatedBackground 15s linear infinite alternate-reverse;
     }
 
     @keyframes animatedBackground {
@@ -17,27 +17,36 @@ page-welcome {
     .splash-info {
         position: relative;
         z-index: 2;
-        margin-top: -485px;
         text-align: center;
     }
 
     .splash-logo {
         margin: auto;
+        margin-top: 20%;
         background: url('./../assets/img/appicon.svg') no-repeat transparent;
         background-size: 100%;
         width: 256px;
-        height: 256px;
+        height: 128px;
+        animation: animatedLogo 0.5s linear infinite alternate-reverse;
+    }
+
+    @keyframes animatedLogo {
+        from { background-position: 0 0; }
+        to { background-position: 0 100%; }
     }
 
     .splash-intro {
-        font-size: 18px;
         font-weight: bold;
-        max-width: 90%;
+        max-width: 80%;
         margin: auto;
-        p {
+
+        h1 {
+            margin: 0;
+        }
+
+        h4 {
             font-weight: lighter;
-            max-width: 80%;
-            font-size: 16px;
+            max-width: 95%;
             margin: auto;
         }
     }
