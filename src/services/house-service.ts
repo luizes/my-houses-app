@@ -7,14 +7,24 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
 export class HouseService {
     private _basePath: string = '/houses';
 
-    private _housesCollection: AngularFirestoreCollection<House>;
+    private _housesCollection: AngularFirestoreCollection<any>;
 
     constructor(private _firestore: AngularFirestore) {
-        this._housesCollection = _firestore.collection<House>(this._basePath);
+        this._housesCollection = _firestore.collection<any>(this._basePath);
     }
 
     public createHouse(house: House): Promise<any> {
-        return this._housesCollection.add(house);
+        let houseAdding = {
+            address: house.address,
+            city: house.city,
+            description: house.description,
+            images: house.images,
+            neighborhood: house.neighborhood,
+            number: house.number,
+            reforms: house.reforms,
+            state: house.state
+        }
+        return this._housesCollection.add(houseAdding);
     }
 
     public getHouses(): Observable<House[]> {

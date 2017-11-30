@@ -5,14 +5,17 @@ export class House {
     public description: string;
 
     public address: string;
-    public number: number;
+    public number: string;
     public neighborhood: string;
     public city: string;
     public state: string;
-    public nation: string;
 
     public images: string[] = [];
     public reforms: Reform[] = [];
+
+    public addressComplete(): string {
+        return `${this.number} ${this.address}, ${this.city}`
+    }
 
     // public spentTotal(): number {
     //     let spents: number[] = this.reforms.map(a => a.spent);

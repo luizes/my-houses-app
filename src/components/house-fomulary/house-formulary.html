@@ -47,10 +47,8 @@
             </ion-item>
         </ion-col>
     </ion-row>
-    <ion-item>
-        <ion-label stacked>País:
-            <span *ngIf="!formHouse.controls['nation'].valid" ion-text color="danger">*</span>
-        </ion-label>
-        <ion-input [(ngModel)]="house.nation" formControlName="nation" type="text"></ion-input>
-    </ion-item>
 </form>
+
+<div padding>
+    <button ion-button color="secondary" block (click)="confirmHouse()">Confirmar</button>
+</div>

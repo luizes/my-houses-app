@@ -10,11 +10,5 @@
 </ion-header>
 
 <ion-content>
-    <house-formulary></house-formulary>
+    <house-formulary (confirmHouse)="updateHouse($event)"></house-formulary>
 </ion-content>
-
-<ion-footer>
-    <div padding>
-        <button ion-button color="secondary" block (click)="updateHouse()">Salvar</button>
-    </div>
-</ion-footer>
