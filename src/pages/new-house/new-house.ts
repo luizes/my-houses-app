@@ -28,6 +28,7 @@ export class NewHousePage {
                     });
                 })
                 .catch(error => {
+                    load.dismiss();
                     console.error(error);
                     this._alertError();
                 });

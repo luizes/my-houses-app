@@ -1,54 +1,73 @@
-<form novalidate [formGroup]="formHouse">
-    <ion-item>
-        <ion-label stacked>Descrição:
-            <span *ngIf="!formHouse.controls['description'].valid" ion-text color="danger">*</span>
-        </ion-label>
-        <ion-textarea [(ngModel)]="house.description" formControlName="description" type="text"></ion-textarea>
-    </ion-item>
-    <ion-item>
-        <ion-label stacked>Endereço:
-            <span *ngIf="!formHouse.controls['address'].valid" ion-text color="danger">*</span>
-        </ion-label>
-        <ion-input [(ngModel)]="house.address" formControlName="address" type="text"></ion-input>
-    </ion-item>
-    <ion-row>
-        <ion-col col-4>
+<ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segment">
+        <ion-segment-button value="data">
+            Geral
+        </ion-segment-button>
+        <ion-segment-button value="image">
+            Imagens
+        </ion-segment-button>
+        <ion-segment-button value="reform">
+            Reformas
+        </ion-segment-button>
+    </ion-segment>
+</ion-toolbar>
+
+<div [ngSwitch]="segment">
+    <div *ngSwitchCase="'data'">
+        <form novalidate [formGroup]="formHouse">
+            <ion-item>
+                <ion-label stacked>Descrição:
+                    <span *ngIf="!formHouse.controls['description'].valid" ion-text color="danger">*</span>
+                </ion-label>
+                <ion-textarea [(ngModel)]="house.description" formControlName="description" type="text"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>Endereço:
+                    <span *ngIf="!formHouse.controls['address'].valid" ion-text color="danger">*</span>
+                </ion-label>
+                <ion-input [(ngModel)]="house.address" formControlName="address" type="text"></ion-input>
+            </ion-item>
             <ion-item>
                 <ion-label stacked>Número:
                     <span *ngIf="!formHouse.controls['number'].valid" ion-text color="danger">*</span>
                 </ion-label>
                 <ion-input [(ngModel)]="house.number" formControlName="number" type="text"></ion-input>
             </ion-item>
-        </ion-col>
-        <ion-col col-8>
             <ion-item>
                 <ion-label stacked>Bairro:
                     <span *ngIf="!formHouse.controls['neighborhood'].valid" ion-text color="danger">*</span>
                 </ion-label>
                 <ion-input [(ngModel)]="house.neighborhood" formControlName="neighborhood" type="text"></ion-input>
             </ion-item>
-        </ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col col-6>
             <ion-item>
                 <ion-label stacked>Cidade:
                     <span *ngIf="!formHouse.controls['city'].valid" ion-text color="danger">*</span>
                 </ion-label>
                 <ion-input [(ngModel)]="house.city" formControlName="city" type="text"></ion-input>
             </ion-item>
-        </ion-col>
-        <ion-col col-6>
             <ion-item>
                 <ion-label stacked>Estado:
                     <span *ngIf="!formHouse.controls['state'].valid" ion-text color="danger">*</span>
                 </ion-label>
                 <ion-input [(ngModel)]="house.state" formControlName="state" type="text"></ion-input>
             </ion-item>
-        </ion-col>
-    </ion-row>
-</form>
+        </form>
 
-<div padding>
-    <button ion-button color="secondary" block (click)="confirmHouse()">Confirmar</button>
+        <div padding>
+            <button ion-button color="secondary" block (click)="confirmHouse()">Confirmar</button>
+        </div>
+    </div>
+
+    <div *ngSwitchCase="'image'">
+        <ion-item>
+            <h2>Imagens</h2>
+            <p>{{totalImages}}</p>
+            <button ion-button clear item-end (click)="newPhoto()">Adicionar</button>
+        </ion-item>
+        <ion-slides *ngIf="house.images.length > 0" pager>
+            <ion-slide *ngFor="let img of house.images">
+                <img src="{{img}}">
+            </ion-slide>
+        </ion-slides>
+    </div>
 </div>
