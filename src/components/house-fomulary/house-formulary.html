@@ -64,10 +64,12 @@
             <p>{{totalImages}}</p>
             <button ion-button clear item-end (click)="newPhoto()">Adicionar</button>
         </ion-item>
-        <ion-slides *ngIf="house.images.length > 0" pager>
-            <ion-slide *ngFor="let img of house.images">
-                <img src="{{img}}">
-            </ion-slide>
-        </ion-slides>
+        <ion-card>
+            <ion-slides *ngIf="house.images.length > 0" pager>
+                <ion-slide *ngFor="let img of house.images">
+                    <img src="{{img}}">
+                </ion-slide>
+            </ion-slides>
+        </ion-card>
     </div>
 </div>
